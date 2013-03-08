@@ -8,7 +8,7 @@ def topBot(x, step):
 		print "At the top i is %d" % i
 		numbers.append(i)
 
-		i += step
+#		i += step - this is just ignored and the one in range steps through the whole range
 		print "Numbers now: ", numbers
 		print "At the bottom i is %d" % i
 
