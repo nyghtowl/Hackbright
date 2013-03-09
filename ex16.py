@@ -31,7 +31,8 @@ target.write(line3)
 target.write("\n")
 '''
 
-target.write(%s \n %s \n %s \n) % (line1, line2, line3)
+# Below is something we tested to see if we could collapse the lines above
+target.write(("%s \n %s \n %s \n") % (line1, line2, line3))
  
 print "And finally, we close it."
 target.close()
