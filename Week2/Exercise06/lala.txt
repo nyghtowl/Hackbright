@@ -1,0 +1,4 @@
+Write program, wordcount.py, that opens file named on the command
+line and counts how many times each space-separated word occurs in
+that file. Your program should then print those counts to the
+screen. For example: in in in 
