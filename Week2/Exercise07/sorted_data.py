@@ -1,4 +1,5 @@
 from sys import argv
+import string
 
 scirpt, filename = argv
 
