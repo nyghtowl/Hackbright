@@ -65,8 +65,7 @@ def replace_head(input_list):
 
 def replace_third_and_last(input_list):
     """Replace the third and last elements of the input list with the value 37."""
-    input_list[2] = 37
-    input_list[-1] = 37
+    input_list[2] = input_list[-1] = 37
 
 def replace_middle(input_list):
     """Replace all elements of the input list with the the values 42 and 37, in
@@ -140,12 +139,11 @@ def custom_pop(input_list):
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    i = 0
-    x = input_list[i]
-    while x != value:
-        i += 1
-        x = input_list[i]
-    return i
+    for i, list_value in enumerate(input_list):
+        if list_value == value:
+            return i
+    else:
+        raise ValueError, "%s is not in list" % value
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
@@ -164,7 +162,7 @@ def custom_reverse(input_list):
     new_list = []
     i = len(input_list) - 1
 
-    while i>= 0:
+    while i >= 0:
         new_list.append(input_list[i])
         i -= 1
     input_list[:] = new_list
