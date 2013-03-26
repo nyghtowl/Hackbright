@@ -1,7 +1,7 @@
 import arithmetic
 
 def REPL(input):
-	tokens = input.split(" ")
+	tokens = [token.strip() for token in input.split(" ")]
 
 	if tokens[0] == "+":
 		print arithmetic.add(int(tokens[1]), int(tokens[2]))
@@ -28,7 +28,10 @@ def REPL(input):
 		print arithmetic.mod(int(tokens[1]), int(tokens[2]))
 			
 while True:
-	x = raw_input('> ')
+	try:
+		x = raw_input('> ')
+	except KeyboardInterrupt:
+		x = 'q'
 	
 	if x == 'q':
 		break
